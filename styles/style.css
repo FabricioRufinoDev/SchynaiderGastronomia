@@ -39,6 +39,20 @@ a {
     margin: 0 auto;
 }
 
+/* --- ESTILO BASE E ANIMAÇÃO REUTILIZÁVEL DE ROlAGEM --- */
+.scroll-animated {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+/* Classe injetada pelo JavaScript quando o elemento entra na tela */
+.scroll-animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* --- BOTÕES --- */
 .btn-cta {
     display: inline-block;
@@ -192,14 +206,7 @@ header {
     padding: 2.5rem 2rem;
     border-radius: 8px;
     border: 1px solid #1f1f1f;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-item.visible {
-    opacity: 1;
-    transform: translateY(0);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .feature-item:hover {
@@ -242,11 +249,13 @@ header {
     overflow: hidden;
     border: 1px solid #1f1f1f;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-    transform: scale(1.02);
+    border-color: var(--gold);
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 20px rgba(197, 168, 128, 0.05);
 }
 
 .service-img {
@@ -267,7 +276,7 @@ header {
     text-transform: uppercase;
 }
 
-/* --- PROCESSO --- */
+/* --- PROCESSO (COMO TRABALHAMOS) --- */
 .process {
     padding: 6rem 0;
     background-color: var(--pure-black);
@@ -282,6 +291,11 @@ header {
 .process-step {
     text-align: center;
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-5px) !important;
 }
 
 .step-number {
@@ -440,7 +454,7 @@ footer h2 {
     color: #444;
 }
 
-/* --- MEDIA QUERIES (RESPONSIVIDADE COMPLETA E ATUALIZADA) --- */
+/* --- MEDIA QUERIES (RESPONSIVIDADE COMPLETA) --- */
 @media (max-width: 968px) {
     .hero {
         padding: 6rem 0;
@@ -453,7 +467,6 @@ footer h2 {
         margin: 0 auto;
     }
     
-    /* Reorganização para tablets e telas médias */
     .nav-container {
         flex-wrap: wrap;
         justify-content: space-between;
@@ -484,7 +497,6 @@ footer h2 {
         font-size: 1.6rem; 
     }
     
-    /* Layout exclusivo para celulares: Logo acima, menu e orçamento alinhados abaixo */
     .nav-container {
         flex-direction: column;
         gap: 0.8rem;
@@ -497,7 +509,6 @@ footer h2 {
         margin-bottom: -25px;
     }
 
-    /* O menu se mantém VISÍVEL no mobile, bem distribuído */
     .nav-menu {
         display: flex;
         justify-content: center;
@@ -507,7 +518,7 @@ footer h2 {
     }
 
     .nav-menu a {
-        font-size: 0.75rem; /* Diminui um pouco para não quebrar linha no touch do celular */
+        font-size: 0.75rem;
         letter-spacing: 0.3px;
         font-weight: 500;
     }

@@ -15,7 +15,7 @@
                 <img src="/assets/SCHYNAIDER.png" alt="Schynaider Gastronomia" class="logo-img">
             </a>
             
-            <!-- Menu de navegação (Agora visível também no mobile) -->
+            <!-- Menu de navegação (Visível no desktop e mobile) -->
             <ul class="nav-menu">
                 <li><a href="#diferenciais">Diferenciais</a></li>
                 <li><a href="#servicos">Eventos</a></li>
@@ -44,32 +44,32 @@
         <div class="container">
             <h2 class="section-title">Nossos Diferenciais</h2>
             <div class="features-grid">
-                <div class="feature-item">
+                <div class="feature-item scroll-animated">
                     <div class="icon">🇧🇷</div>
                     <h3>Atendimento Nacional</h3>
                     <p>Atendimento em todo o Brasil com a mesma eficiência.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item scroll-animated">
                     <div class="icon">🧑‍🍳</div>
                     <h3>Equipe Qualificada</h3>
                     <p>Equipe altamente qualificada e treinada para alta exigência.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item scroll-animated">
                     <div class="icon">🏢</div>
                     <h3>Estrutura Completa</h3>
                     <p>Estrutura para eventos de pequeno, médio e grande porte.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item scroll-animated">
                     <div class="icon">📋</div>
                     <h3>Cardápios Personalizados</h3>
                     <p>Menus customizados para alinhar com o perfil do seu evento.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item scroll-animated">
                     <div class="icon">✨</div>
                     <h3>Produção Própria</h3>
                     <p>Ingredientes rigorosamente selecionados e produção própria.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item scroll-animated">
                     <div class="icon">⏱</div>
                     <h3>Pontualidade</h3>
                     <p>Planejamento detalhado e execução com pontualidade britânica.</p>
@@ -83,19 +83,19 @@
         <div class="container">
             <h2 class="section-title">Eventos que Atendemos</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card scroll-animated">
                     <div class="service-img">[ Coffee Break ]</div>
                     <div class="service-info"><h3>Coffee Break</h3></div>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-animated">
                     <div class="service-img">[ Happy Hour ]</div>
                     <div class="service-info"><h3>Happy Hour</h3></div>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-animated">
                     <div class="service-img">[ Coquetel ]</div>
                     <div class="service-info"><h3>Coquetel</h3></div>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-animated">
                     <div class="service-img">[ Feiras & Congressos ]</div>
                     <div class="service-info"><h3>Feiras e Congressos</h3></div>
                 </div>
@@ -108,22 +108,22 @@
         <div class="container">
             <h2 class="section-title">Como Trabalhamos</h2>
             <div class="process-grid">
-                <div class="process-step">
+                <div class="process-step scroll-animated">
                     <div class="step-number">1</div>
                     <h3>Alinhamento</h3>
                     <p>Entendemos as necessidades e o formato do seu evento.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step scroll-animated">
                     <div class="step-number">2</div>
                     <h3>Criação</h3>
                     <p>Desenvolvemos um cardápio personalizado exclusivo.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step scroll-animated">
                     <div class="step-number">3</div>
                     <h3>Logística</h3>
                     <p>Planejamos toda a operação e infraestrutura necessária.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step scroll-animated">
                     <div class="step-number">4</div>
                     <h3>Excelência</h3>
                     <p>Executamos o evento entregando uma experiência impecável.</p>
@@ -214,7 +214,7 @@
     <footer id="contato">
         <div class="container footer-content">
             <h2>Seu evento merece uma gastronomia à altura.</h2>
-            <p class="final-text">Conte com a Schynaider Gastronomia para transformar cada ocasião em uma experiência memorável, com qualidade, organization e excelência do planejamento à execução.</p>
+            <p class="final-text">Conte com a Schynaider Gastronomia para transformar cada ocasião em uma experiência memorável, com qualidade, organização e excelência do planejamento à execução.</p>
             <a href="https://api.whatsapp.com/send/?phone=5511930617005&text=Olá!%20Quero%20fazer%20um%20orçamento." target="_blank" class="btn-cta">Falar Conosco no WhatsApp</a>
             <div class="footer-bottom">
                 <p>&copy; 2026 Schynaider Gastronomia. Todos os direitos reservados.</p>
@@ -222,7 +222,9 @@
         </div>
     </footer>
 
+    <!-- INTERAÇÕES INTERNAS -->
     <script>
+        // --- SCRIPT DO FAQ ---
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
@@ -235,17 +237,25 @@
             });
         });
 
-        const cards = document.querySelectorAll('.feature-item');
-        const observer = new IntersectionObserver((entries) => {
+        // --- SCRIPT GLOBAL DE ANIMAÇÃO NO SCROLL ---
+        // Seleciona todos os elementos com a classe '.scroll-animated'
+        const animatedElements = document.querySelectorAll('.scroll-animated');
+
+        const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                    scrollObserver.unobserve(entry.target); // Remove o observador para fixar visível após animar uma vez
                 }
             });
-        }, { threshold: 0.15 });
+        }, {
+            threshold: 0.12 // Dispara o efeito quando 12% do card surge na tela
+        });
 
-        cards.forEach(card => { observer.observe(card); });
+        // Vincula o observador em cada um dos itens mapeados
+        animatedElements.forEach(element => {
+            scrollObserver.observe(element);
+        });
     </script>
 </body>
 </html>
