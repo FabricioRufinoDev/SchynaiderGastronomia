@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schynaider Gastronomia - Eventos Corporativos e Sociais</title>
+    
+    <!-- Biblioteca de Ícones (Font Awesome para o Instagram) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Chamada segura do CSS -->
     <link rel="stylesheet" href="/styles/style.css">
+    
+    <!-- Fontes do Google (Roboto + Cookie) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- JavaScript externo carregado com segurança -->
+    <script src="./styles/js/main.js" defer></script>
 </head>
 <body>
 
-    <!-- HEADER / MENU -->
+    <!-- CABEÇALHO / NAVEGAÇÃO -->
     <header>
         <div class="container nav-container">
             <a href="#" class="logo-link">
                 <img src="/assets/SCHYNAIDER.png" alt="Schynaider Gastronomia" class="logo-img">
             </a>
-            
-            <!-- Menu de navegação (Visível no desktop e mobile) -->
             <ul class="nav-menu">
                 <li><a href="#diferenciais">Diferenciais</a></li>
                 <li><a href="#servicos">Eventos</a></li>
                 <li><a href="#como-trabalhamos">Processo</a></li>
                 <li><a href="#faq">Dúvidas</a></li>
             </ul>
-
-            <!-- Botão de orçamento -->
-            <a href="#contato" class="btn-menu-cta">Orçamento</a>
+            
+            <!-- Grupo de Ações (Instagram + Botão) -->
+            <div class="nav-actions">
+                <a href="https://instagram.com/schynaidergastronomia" target="_blank" class="nav-instagram" aria-label="Nos siga no Instagram">
+                    <!-- CORREÇÃO FEITA AQUI: Ícone do instagram arrumado -->
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=5511976192305&text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20evento." target="_blank" class="btn-menu-cta">Orçamento</a>
+            </div>
         </div>
     </header>
 
@@ -34,7 +51,7 @@
             <div class="hero-content">
                 <h1>Schynaider<br><span>Gastronomia</span></h1>
                 <p>Experiências gastronômicas para eventos corporativos e sociais em todo o Brasil.</p>
-                <a href="https://api.whatsapp.com/send/?phone=5511930617005&text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20evento." target="_blank" class="btn-cta">Solicite seu Orçamento</a>
+                <a href="https://api.whatsapp.com/send/?phone=5511976192305&text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20evento." target="_blank" class="btn-cta">Solicite seu Orçamento</a>
             </div>
         </div>
     </section>
@@ -78,31 +95,31 @@
         </div>
     </section>
 
-    <!-- EVENTOS QUE ATENDEMOS -->
+    <!-- EVENTOS QUE ATENDEMOS 
     <section id="servicos" class="services">
         <div class="container">
             <h2 class="section-title">Eventos que Atendemos</h2>
             <div class="services-grid">
                 <div class="service-card scroll-animated">
-                    <div class="service-img">[ Coffee Break ]</div>
+                    <div class="service-img-placeholder">[ Coffee Break ]</div>
                     <div class="service-info"><h3>Coffee Break</h3></div>
                 </div>
                 <div class="service-card scroll-animated">
-                    <div class="service-img">[ Happy Hour ]</div>
+                    <div class="service-img-placeholder">[ Happy Hour ]</div>
                     <div class="service-info"><h3>Happy Hour</h3></div>
                 </div>
                 <div class="service-card scroll-animated">
-                    <div class="service-img">[ Coquetel ]</div>
+                    <div class="service-img-placeholder">[ Coquetel ]</div>
                     <div class="service-info"><h3>Coquetel</h3></div>
                 </div>
                 <div class="service-card scroll-animated">
-                    <div class="service-img">[ Feiras & Congressos ]</div>
+                    <div class="service-img-placeholder">[ Feiras & Congressos ]</div>
                     <div class="service-info"><h3>Feiras e Congressos</h3></div>
                 </div>
             </div>
         </div>
     </section>
-
+-->
     <!-- COMO TRABALHAMOS -->
     <section id="como-trabalhamos" class="process">
         <div class="container">
@@ -132,17 +149,20 @@
         </div>
     </section>
 
-    <!-- GALERIA -->
+    <!-- NOVA GALERIA (BLOCO DE 8 FOTOS COM TROCA AUTOMÁTICA) -->
     <section class="gallery">
         <div class="container">
             <h2 class="section-title">Nossa Galeria</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">[ Foto: Coffee Break ]</div>
-                <div class="gallery-item">[ Foto: Feiras e Congressos ]</div>
-                <div class="gallery-item">[ Foto: Jantar Corporativo ]</div>
-                <div class="gallery-item">[ Foto: Casamentos ]</div>
-                <div class="gallery-item">[ Foto: Coquetéis ]</div>
-                <div class="gallery-item">[ Foto: Equipe em Ação ]</div>
+            <!-- Estrutura para 8 espaços que serão atualizados pelo JS -->
+            <div class="gallery-grid" id="auto-gallery">
+                <div class="gallery-slot"><img src="/assets/img1.jpeg" alt="Galeria Schynaider"></div>
+                <div class="gallery-slot"><img src="/assets/img2.jpeg" alt="Galeria Schynaider"></div>
+                <div class="gallery-slot"><img src="/assets/img3.jpeg" alt="Galeria Schynaider"></div>
+                <div class="gallery-slot"><img src="/assets/img4.jpeg" alt="Galeria Schynaider"></div>
+                <div class="gallery-slot"><img src="/assets/img5.jpeg" alt="Galeria Schynaider"></div>
+                <div class="gallery-slot"><img src="/assets/img6.jpeg" alt="Galeria Schynaider"></div>
+                <div class="gallery-slot"><img src="/assets/img7.jpeg" alt="Galeria Schynaider"></div>
+                <div class="gallery-slot"><img src="/assets/img8.jpeg" alt="Galeria Schynaider"></div>
             </div>
         </div>
     </section>
@@ -209,53 +229,13 @@
             </div>
         </div>
     </section>
-
-    <!-- CHAMADA FINAL / FOOTER -->
+    <!-- FOOTER -->
     <footer id="contato">
         <div class="container footer-content">
-            <h2>Seu evento merece uma gastronomia à altura.</h2>
-            <p class="final-text">Conte com a Schynaider Gastronomia para transformar cada ocasião em uma experiência memorável, com qualidade, organização e excelência do planejamento à execução.</p>
-            <a href="https://api.whatsapp.com/send/?phone=5511930617005&text=Olá!%20Quero%20fazer%20um%20orçamento." target="_blank" class="btn-cta">Falar Conosco no WhatsApp</a>
-            <div class="footer-bottom">
                 <p>&copy; 2026 Schynaider Gastronomia. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- INTERAÇÕES INTERNAS -->
-    <script>
-        // --- SCRIPT DO FAQ ---
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== faqItem) {
-                        item.classList.remove('active');
-                    }
-                });
-                faqItem.classList.toggle('active');
-            });
-        });
-
-        // --- SCRIPT GLOBAL DE ANIMAÇÃO NO SCROLL ---
-        // Seleciona todos os elementos com a classe '.scroll-animated'
-        const animatedElements = document.querySelectorAll('.scroll-animated');
-
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    scrollObserver.unobserve(entry.target); // Remove o observador para fixar visível após animar uma vez
-                }
-            });
-        }, {
-            threshold: 0.12 // Dispara o efeito quando 12% do card surge na tela
-        });
-
-        // Vincula o observador em cada um dos itens mapeados
-        animatedElements.forEach(element => {
-            scrollObserver.observe(element);
-        });
-    </script>
 </body>
 </html>
