@@ -24,13 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
 // SCRIPT DA GALERIA AUTOMÁTICA
 // ==========================================
 const allPhotos = [
+    "assets/imgp1.jpeg", "assets/imgp2.jpeg", "assets/imgp3.jpeg", "assets/imgp4.jpeg",
+    "assets/imgp5.jpeg", "assets/imgp6.jpeg", "assets/imgp7.jpeg", "assets/imgp8.jpeg",
+    "assets/imgp9.jpeg", "assets/imgp10.jpeg", "assets/imgp11.jpeg", "assets/imgp12.jpeg","assets/imgp13.jpeg",
     "assets/img1.jpeg", "assets/img2.jpeg", "assets/img3.jpeg", "assets/img4.jpeg",
     "assets/img5.jpeg", "assets/img6.jpeg", "assets/img7.jpeg", "assets/img8.jpeg",
     "assets/img9.jpeg", "assets/img10.jpeg", "assets/img11.jpeg", "assets/img12.jpeg",
     "assets/img13.jpeg", "assets/img14.jpeg", "assets/img15.jpeg", "assets/img16.jpeg",
-    "assets/img17.jpeg", "assets/img18.jpeg", "assets/img19.jpeg", "assets/img20.jpeg",
-    "assets/img21.jpeg", "assets/img22.jpeg", "assets/img23.jpeg"
-];
+    "assets/img17.jpeg", "assets/img18.jpeg", "assets/img19.jpeg", "assets/img20.jpeg"
+    
+];//
 
 const slots = document.querySelectorAll(".gallery-slot img");
 

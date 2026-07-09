@@ -139,16 +139,31 @@ header {
 /* ==================== HERO SECTION ==================== */
 .hero {
     height: 100vh;
+    width: 100%;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('/assets/hero-bg.jpg') center/cover no-repeat;
+    
+    /* Centralização total */
     display: flex;
-    align-items: center;
-    padding-top: 80px;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    text-align: center;      /* Centraliza o texto */
+    position: relative;
+}
+
+.hero .container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo dentro do container */
 }
 
 .hero-content {
-    max-width: 650px;
+    width: 100%;
+    max-width: 800px;        /* Aumentei um pouco para dar respiro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Centraliza os itens filhos (h1, p, btn) */
+    padding: 0 20px;         /* Padding para não encostar nas laterais no mobile */
 }
-
 .hero h1, 
 .hero h1 span {
     font-family: "Cookie", cursive;
